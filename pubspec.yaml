@@ -1,0 +1,25 @@
+name: custom_lints
+description: A powerful Dart analyzer plugin enforcing clean architecture, indentation limits, and strict class modifiers with automated quick fixes.
+version: 1.0.0
+repository: https://github.com/mahmood1996/custom_lints
+issue_tracker: https://github.com/mahmood1996/custom_lints/issues
+topics:
+  - analyzer-plugin
+  - linter
+  - static-analysis
+  - code-quality
+  - clean-code
+
+environment:
+  sdk: '^3.10.0'
+
+dependencies:
+  analyzer: '>=8.4.0 <15.0.0'
+  analysis_server_plugin: '>=0.3.3 <0.4.0'
+  analyzer_plugin: '>=0.13.0 <1.0.0'
+
+dev_dependencies:
+  analyzer_testing: ^0.3.4
+  lints: ^3.0.0
+  test: ^1.24.0
+  test_reflective_loader: ^0.3.0

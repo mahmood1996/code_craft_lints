@@ -1,0 +1,46 @@
+name: Release to pub.dev
+
+on:
+  push:
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+*'
+  workflow_dispatch:
+
+permissions:
+  id-token: write # Required for pub.dev OIDC authentication
+  contents: write # Required for creating GitHub Releases
+
+jobs:
+  release:
+    name: Test & Publish
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Dart SDK
+        uses: dart-lang/setup-dart@v1
+
+      - name: Install dependencies
+        run: dart pub get
+
+      - name: Verify code formatting
+        run: dart format --output=none --set-exit-if-changed .
+
+      - name: Analyze project
+        run: dart analyze --fatal-infos
+
+      - name: Run test suite
+        run: dart test
+
+      - name: Publish to pub.dev
+        run: dart pub publish --force
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          generate_release_notes: true
+          draft: false
+          prerelease: false
