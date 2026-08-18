@@ -3,3 +3,4 @@ include: package:lints/recommended.yaml
 # Enable the code_craft_lints plugin
 plugins:
   code_craft_lints:
+    path: ../code_craft_lints
