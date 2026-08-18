@@ -3,4 +3,5 @@
 doc/api/
 build/
 .packages
+.gitignore
 pubspec.lock
