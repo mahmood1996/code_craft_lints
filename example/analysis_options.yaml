@@ -3,3 +3,10 @@ include: package:lints/recommended.yaml
 # Enable the code_craft_lints plugin
 plugins:
   code_craft_lints:
+    path: ../
+    diagnostics:
+      prefer_ternary: true
+      pure_contract_class: true
+      final_implementation_class: true
+      one_level_of_indentation: true
+      one_statement_per_block: true
