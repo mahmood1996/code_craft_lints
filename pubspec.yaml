@@ -1,6 +1,6 @@
 name: code_craft_lints
 description: A powerful Dart analyzer plugin enforcing clean architecture, indentation limits, and strict class modifiers with automated quick fixes.
-version: 1.0.0
+version: 1.0.1
 repository: https://github.com/mahmood1996/code_craft_lints
 issue_tracker: https://github.com/mahmood1996/code_craft_lints/issues
 topics:
