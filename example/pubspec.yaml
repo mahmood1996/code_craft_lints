@@ -1,0 +1,11 @@
+name: code_craft_lints_example
+description: An example demonstrating how to configure and use code_craft_lints.
+publish_to: 'none'
+
+environment:
+  sdk: '^3.10.0'
+
+dev_dependencies:
+  code_craft_lints:
+    path: ../
+  lints: ^3.0.0

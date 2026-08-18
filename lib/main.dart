@@ -19,6 +19,9 @@ final plugin = CodeCraftLintsPlugin();
 /// The custom linter analyzer plugin that registers lint rules and quick fixes
 /// with the Dart analysis server plugin registry.
 final class CodeCraftLintsPlugin extends Plugin {
+  /// Creates a new [CodeCraftLintsPlugin] instance.
+  CodeCraftLintsPlugin();
+
   /// The unique name of this analyzer plugin.
   @override
   String get name => 'code_craft_lints';
