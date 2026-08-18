@@ -1,5 +1,5 @@
-import 'package:custom_lints/src/fixes/make_class_interface_fix.dart';
-import 'package:custom_lints/src/rules/pure_contract_class.dart';
+import 'package:code_craft_lints/src/fixes/make_class_interface_fix.dart';
+import 'package:code_craft_lints/src/rules/pure_contract_class.dart';
 import 'package:test_reflective_loader/test_reflective_loader.dart';
 
 import 'fix_test_.dart';

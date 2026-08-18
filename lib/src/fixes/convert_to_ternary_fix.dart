@@ -4,8 +4,8 @@ import 'package:analyzer/dart/ast/ast.dart';
 import 'package:analyzer_plugin/utilities/change_builder/change_builder_core.dart';
 import 'package:analyzer_plugin/utilities/fixes/fixes.dart';
 import 'package:analyzer_plugin/utilities/range_factory.dart';
-import 'package:custom_lints/src/shared/edit_code_command.dart';
 
+import '../shared/edit_code_command.dart';
 import '../shared/smart_statement.dart';
 
 /// A quick fix that converts qualifying `if`/`else` statements into concise ternary expressions.
@@ -14,7 +14,7 @@ import '../shared/smart_statement.dart';
 /// into single ternary expressions (`condition ? a : b`).
 final class ConvertToTernaryFix extends ResolvedCorrectionProducer {
   static const _kind = FixKind(
-    'dart.fix.custom_lints.convertToTernary',
+    'dart.fix.code_craft_lints.convertToTernary',
     DartFixKindPriority.standard,
     'Convert to ternary operator',
   );
@@ -41,11 +41,8 @@ final class ConvertToTernaryFix extends ResolvedCorrectionProducer {
 
     await EditCodeCommand.forReplacement(
       file: file,
-
       builder: builder,
-
       replacement: replacement,
-
       range: range.node(ifStatement),
     ).call();
   }
@@ -57,7 +54,6 @@ final class ConvertToTernaryFix extends ResolvedCorrectionProducer {
 
     return switch ((
       statement.thenStatement.first,
-
       statement.elseStatement?.first,
     )) {
       (

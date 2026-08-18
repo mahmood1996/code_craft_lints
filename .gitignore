@@ -1,1 +1,6 @@
-.dart_tool
+# Dart / Flutter build and tool directories
+.dart_tool/
+doc/api/
+build/
+.packages
+pubspec.lock

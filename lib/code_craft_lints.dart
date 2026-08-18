@@ -3,7 +3,7 @@
 ///
 /// This library exports all custom lint rules, automated quick fixes, and the plugin
 /// entry point for static analysis configuration.
-library custom_lints;
+library code_craft_lints;
 
 export 'main.dart';
 export 'src/fixes/convert_to_ternary_fix.dart';

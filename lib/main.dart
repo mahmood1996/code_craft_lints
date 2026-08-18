@@ -13,15 +13,15 @@ import 'src/rules/one_statement_per_block.dart';
 import 'src/rules/prefer_ternary.dart';
 import 'src/rules/pure_contract_class.dart';
 
-/// The global [CustomLintsPlugin] instance required by the Dart analysis server.
-final plugin = CustomLintsPlugin();
+/// The global [CodeCraftLintsPlugin] instance required by the Dart analysis server.
+final plugin = CodeCraftLintsPlugin();
 
 /// The custom linter analyzer plugin that registers lint rules and quick fixes
 /// with the Dart analysis server plugin registry.
-final class CustomLintsPlugin extends Plugin {
+final class CodeCraftLintsPlugin extends Plugin {
   /// The unique name of this analyzer plugin.
   @override
-  String get name => 'custom_lints';
+  String get name => 'code_craft_lints';
 
   /// Registers all warning rules and quick fixes supported by this plugin.
   @override

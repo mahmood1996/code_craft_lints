@@ -1,6 +1,6 @@
-# Contributing to custom_lints
+# Contributing to code_craft_lints
 
-Thank you for your interest in contributing to `custom_lints`! We are committed to building a reliable, high-quality analysis plugin for the Dart and Flutter ecosystem.
+Thank you for your interest in contributing to `code_craft_lints`! We are committed to building a reliable, high-quality analysis plugin for the Dart and Flutter ecosystem.
 
 ---
 
@@ -16,8 +16,8 @@ Thank you for your interest in contributing to `custom_lints`! We are committed 
 
 ```text
 lib/
-├── custom_lints.dart          # Public exports
-├── main.dart                  # CustomLintsPlugin entrypoint & rule/fix registry
+├── code_craft_lints.dart      # Public exports
+├── main.dart                  # CodeCraftLintsPlugin entrypoint & rule/fix registry
 └── src/
     ├── rules/                 # AnalysisRule implementations
     ├── fixes/                 # ResolvedCorrectionProducer implementations
@@ -78,8 +78,8 @@ test/
    ```
 
 2. **Register the Rule**:
-   - Register the rule in `lib/main.dart` inside `CustomLintsPlugin.register(PluginRegistry registry)`.
-   - Export the rule from `lib/custom_lints.dart`.
+   - Register the rule in `lib/main.dart` inside `CodeCraftLintsPlugin.register(PluginRegistry registry)`.
+   - Export the rule from `lib/code_craft_lints.dart`.
 
 3. **Add Comprehensive Tests**:
    Create `test/rules/<rule_name>_test.dart`:
@@ -103,7 +103,7 @@ test/
 
    final class MyCustomFix extends ResolvedCorrectionProducer {
      static const _kind = FixKind(
-       'dart.fix.custom_lints.myCustomFix',
+       'dart.fix.code_craft_lints.myCustomFix',
        DartFixKindPriority.standard,
        "Apply my custom fix",
      );
@@ -125,7 +125,7 @@ test/
 
 2. **Register the Fix**:
    - Register the fix in `lib/main.dart` using `registry.registerFixForRule(MyCustomLint.code, MyCustomFix.new)`.
-   - Export the fix from `lib/custom_lints.dart`.
+   - Export the fix from `lib/code_craft_lints.dart`.
 
 3. **Add Fix Unit Tests**:
    Create `test/fixes/<fix_name>_test.dart` inheriting from `FixTest`:

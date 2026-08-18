@@ -1,5 +1,5 @@
 import 'package:analyzer_testing/analysis_rule/analysis_rule.dart';
-import 'package:custom_lints/src/rules/one_level_of_indentation.dart';
+import 'package:code_craft_lints/src/rules/one_level_of_indentation.dart';
 import 'package:test_reflective_loader/test_reflective_loader.dart';
 
 void main() {

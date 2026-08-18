@@ -9,7 +9,7 @@ import '../shared/edit_code_command.dart';
 /// A quick fix that adds the `interface` modifier to an abstract class declaration.
 final class MakeClassInterfaceFix extends ResolvedCorrectionProducer {
   static const _kind = FixKind(
-    'dart.fix.custom_lints.makeClassInterface',
+    'dart.fix.code_craft_lints.makeClassInterface',
     DartFixKindPriority.standard,
     "Add 'interface' modifier",
   );

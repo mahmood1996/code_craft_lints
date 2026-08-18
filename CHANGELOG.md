@@ -8,7 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0] - 2026-08-19
 
 ### Added
-- Initial release of `custom_lints` analysis server plugin.
+- Initial release of `code_craft_lints` analysis server plugin.
 - **Lint Rules**:
   - `prefer_ternary`: Enforces ternary operators for simple single-statement returns and assignments instead of verbose `if`/`else` blocks.
   - `pure_contract_class`: Enforces the `abstract interface class` declaration for pure contract classes without implementations or instance fields.

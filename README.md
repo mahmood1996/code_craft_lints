@@ -1,13 +1,13 @@
-# custom_lints
+# code_craft_lints
 
-[![pub package](https://img.shields.io/pub/v/custom_lints.svg?logo=dart&color=blue)](https://pub.dev/packages/custom_lints)
+[![pub package](https://img.shields.io/pub/v/code_craft_lints.svg?logo=dart&color=blue)](https://pub.dev/packages/code_craft_lints)
 [![Dart SDK](https://img.shields.io/badge/Dart-%3E%3D3.10.0-blue.svg?logo=dart)](https://dart.dev)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
 A high-performance **Dart Analysis Server Plugin** providing strict architectural rules, cyclomatic complexity reduction, and automated quick fixes for Dart and Flutter codebases.
 
-Built directly on the modern official `analysis_server_plugin` framework, `custom_lints` integrates seamlessly with your IDE (VS Code, Android Studio, IntelliJ) and CI/CD pipelines via standard `dart analyze` and `dart fix`.
+Built directly on the modern official `analysis_server_plugin` framework, `code_craft_lints` integrates seamlessly with your IDE (VS Code, Android Studio, IntelliJ) and CI/CD pipelines via standard `dart analyze` and `dart fix`.
 
 ---
 
@@ -40,11 +40,11 @@ Built directly on the modern official `analysis_server_plugin` framework, `custo
 
 ## Installation
 
-Add `custom_lints` to your `pubspec.yaml` under `dev_dependencies`:
+Add `code_craft_lints` to your `pubspec.yaml` under `dev_dependencies`:
 
 ```yaml
 dev_dependencies:
-  custom_lints: ^1.0.0
+  code_craft_lints: ^1.0.0
 ```
 
 Then install the dependencies:
@@ -63,7 +63,7 @@ Enable the plugin in your project's `analysis_options.yaml`:
 
 ```yaml
 plugins:
-  custom_lints:
+  code_craft_lints:
 ```
 
 Once enabled, restart your IDE's Dart Analysis Server or run:
@@ -76,7 +76,7 @@ dart analyze
 
 ## Automatic Fixing
 
-Many rules provided by `custom_lints` include automated quick fixes.
+Many rules provided by `code_craft_lints` include automated quick fixes.
 
 ### In your IDE
 Press `Alt + Enter` (Windows/Linux) or `Cmd + .` (macOS) on any highlighted warning to preview and apply the fix.

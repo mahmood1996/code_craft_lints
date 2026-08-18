@@ -3,12 +3,13 @@ import 'package:analysis_server_plugin/edit/dart/dart_fix_kind_priority.dart';
 import 'package:analyzer/dart/ast/ast.dart';
 import 'package:analyzer_plugin/utilities/change_builder/change_builder_core.dart';
 import 'package:analyzer_plugin/utilities/fixes/fixes.dart';
-import 'package:custom_lints/src/shared/edit_code_command.dart';
+
+import '../shared/edit_code_command.dart';
 
 /// A quick fix that adds the `final` modifier to a concrete class declaration.
 final class MakeClassFinalFix extends ResolvedCorrectionProducer {
   static const _kind = FixKind(
-    'dart.fix.custom_lints.makeClassFinal',
+    'dart.fix.code_craft_lints.makeClassFinal',
     DartFixKindPriority.standard,
     "Add 'final' modifier",
   );
@@ -40,7 +41,7 @@ final class MakeClassFinalFix extends ResolvedCorrectionProducer {
 /// A quick fix that adds the `base` modifier to a concrete class declaration.
 final class MakeClassBaseFix extends ResolvedCorrectionProducer {
   static const _kind = FixKind(
-    'dart.fix.custom_lints.makeClassBase',
+    'dart.fix.code_craft_lints.makeClassBase',
     DartFixKindPriority.standard - 1,
     "Add 'base' modifier",
   );
