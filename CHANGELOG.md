@@ -5,6 +5,19 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2026-08-19
+
+### Added
+- Added `max_two_level_of_indentation` rule to enforce a maximum of 2 levels of indentation per function body.
+
+### Changed
+- Replaced `one_level_of_indentation` rule with `max_two_level_of_indentation`.
+- Refactored `_indentationLevel` calculation to compute AST nesting levels using non-recursive switch-expression pattern matching (FunctionDeclaration = 0, FunctionBody = 1, Blocks under FunctionBody = 2, Nested control flow = 3+).
+- Updated example project, analysis configuration, test suite, and documentation for the new indentation rule.
+
+### Removed
+- Removed deprecated `one_level_of_indentation` rule.
+
 ## [1.0.2] - 2026-08-19
 
 ### Fixed

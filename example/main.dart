@@ -54,7 +54,7 @@ String formatAccountStatus({required bool isActive}) {
 }
 
 // ============================================================================
-// 4. Rule: one_level_of_indentation & one_statement_per_block
+// 4. Rule: max_two_level_of_indentation & one_statement_per_block
 // Enforces flat control flow and single-responsibility blocks.
 // ============================================================================
 
@@ -63,7 +63,7 @@ final class NotificationService {
   /// Dispatches greetings to all registered user IDs.
   ///
   /// Notice that the loop delegates processing to a dedicated helper method,
-  /// keeping the indentation level <= 1 and block statements <= 1.
+  /// keeping the indentation level <= 2 and block statements <= 1.
   Future<void> notifyUsers(
     List<String> userIds,
     UserRepository repository,

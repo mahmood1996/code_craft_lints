@@ -10,7 +10,7 @@ export 'src/fixes/convert_to_ternary_fix.dart';
 export 'src/fixes/make_class_final_fix.dart';
 export 'src/fixes/make_class_interface_fix.dart';
 export 'src/rules/final_implementation_class.dart';
-export 'src/rules/one_level_of_indentation.dart';
+export 'src/rules/max_two_level_of_indentation.dart';
 export 'src/rules/one_statement_per_block.dart';
 export 'src/rules/prefer_ternary.dart';
 export 'src/rules/pure_contract_class.dart';

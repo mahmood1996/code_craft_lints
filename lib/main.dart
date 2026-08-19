@@ -8,7 +8,7 @@ import 'src/fixes/convert_to_ternary_fix.dart';
 import 'src/fixes/make_class_final_fix.dart';
 import 'src/fixes/make_class_interface_fix.dart';
 import 'src/rules/final_implementation_class.dart';
-import 'src/rules/one_level_of_indentation.dart';
+import 'src/rules/max_two_level_of_indentation.dart';
 import 'src/rules/one_statement_per_block.dart';
 import 'src/rules/prefer_ternary.dart';
 import 'src/rules/pure_contract_class.dart';
@@ -32,7 +32,7 @@ final class CodeCraftLintsPlugin extends Plugin {
     registry
       ..registerWarningRule(PreferTernaryLint())
       ..registerWarningRule(PureContractClassLint())
-      ..registerWarningRule(OneLevelOfIndentationLint())
+      ..registerWarningRule(MaxTwoLevelOfIndentationLint())
       ..registerWarningRule(OneStatementPerBlockLint())
       ..registerWarningRule(FinalImplementationClassLint())
       ..registerFixForRule(

@@ -8,5 +8,5 @@ plugins:
       prefer_ternary: true
       pure_contract_class: true
       final_implementation_class: true
-      one_level_of_indentation: true
+      max_two_level_of_indentation: true
       one_statement_per_block: true

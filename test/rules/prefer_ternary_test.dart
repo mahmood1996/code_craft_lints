@@ -9,7 +9,7 @@ void main() {
 }
 
 @reflectiveTest
-class PreferTernaryTest extends AnalysisRuleTest {
+final class PreferTernaryTest extends AnalysisRuleTest {
   @override
   void setUp() {
     rule = PreferTernaryLint();

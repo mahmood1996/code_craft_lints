@@ -1,18 +1,18 @@
 import 'package:analyzer_testing/analysis_rule/analysis_rule.dart';
-import 'package:code_craft_lints/src/rules/one_level_of_indentation.dart';
+import 'package:code_craft_lints/src/rules/max_two_level_of_indentation.dart';
 import 'package:test_reflective_loader/test_reflective_loader.dart';
 
 void main() {
   defineReflectiveSuite(() {
-    defineReflectiveTests(OneLevelOfIndentationTest);
+    defineReflectiveTests(MaxTwoLevelOfIndentationTest);
   });
 }
 
 @reflectiveTest
-class OneLevelOfIndentationTest extends AnalysisRuleTest {
+final class MaxTwoLevelOfIndentationTest extends AnalysisRuleTest {
   @override
   void setUp() {
-    rule = OneLevelOfIndentationLint();
+    rule = MaxTwoLevelOfIndentationLint();
     super.setUp();
   }
 
@@ -137,6 +137,21 @@ void f(bool c) {
 }
 ''',
       [lint(57, 16)],
+    );
+  }
+
+  Future<void> test_nestedIfInsideTry_reportsIndentationLint() async {
+    await assertDiagnostics(
+      r'''
+void f(bool c) {
+  try {
+    if (c) print(1);
+  } catch (e) {
+    print(2);
+  }
+}
+''',
+      [lint(29, 16)],
     );
   }
 

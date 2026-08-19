@@ -9,7 +9,7 @@ void main() {
 }
 
 @reflectiveTest
-class OneStatementPerBlockTest extends AnalysisRuleTest {
+final class OneStatementPerBlockTest extends AnalysisRuleTest {
   @override
   void setUp() {
     rule = OneStatementPerBlockLint();

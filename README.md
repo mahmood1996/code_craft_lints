@@ -21,7 +21,7 @@ Built directly on the modern official `analysis_server_plugin` framework, `code_
   - [prefer_ternary](#prefer_ternary)
   - [pure_contract_class](#pure_contract_class)
   - [final_implementation_class](#final_implementation_class)
-  - [one_level_of_indentation](#one_level_of_indentation)
+  - [max_two_level_of_indentation](#max_two_level_of_indentation)
   - [one_statement_per_block](#one_statement_per_block)
 - [Disabling Rules](#disabling-rules)
 - [Contributing](#contributing)
@@ -44,7 +44,7 @@ Add `code_craft_lints` to your `pubspec.yaml` under `dev_dependencies`:
 
 ```yaml
 dev_dependencies:
-  code_craft_lints: ^1.0.0
+  code_craft_lints: ^1.1.0
 ```
 
 Then install the dependencies:
@@ -97,7 +97,7 @@ dart fix --apply
 | [`prefer_ternary`](#prefer_ternary) | `Warning` | ✅ Yes | Prefer ternary operators for simple returns and assignments. |
 | [`pure_contract_class`](#pure_contract_class) | `Warning` | ✅ Yes | Declare pure contract classes as `abstract interface class`. |
 | [`final_implementation_class`](#final_implementation_class) | `Warning` | ✅ Yes | Declare concrete implementation classes as `final class` or `base class`. |
-| [`one_level_of_indentation`](#one_level_of_indentation) | `Warning` | ❌ Manual | Enforce at most 1 level of control-flow indentation per function. |
+| [`max_two_level_of_indentation`](#max_two_level_of_indentation) | `Warning` | ❌ Manual | Enforce at most 2 levels of indentation per function. |
 | [`one_statement_per_block`](#one_statement_per_block) | `Warning` | ❌ Manual | Ensure control blocks contain at most one statement. |
 
 ---
@@ -223,20 +223,20 @@ base class Authenticator {
 
 ---
 
-### `one_level_of_indentation`
+### `max_two_level_of_indentation`
 
 **Severity:** `Warning`  
-**Diagnostic Code:** `one_level_of_indentation`  
+**Diagnostic Code:** `max_two_level_of_indentation`  
 **Automated Fix:** Manual refactoring / helper extraction
 
 #### Rationale
-Rooted in **Object Calisthenics**, this rule mandates that a single function body should not exceed one level of control-flow indentation (`if`, `for`, `while`, `do`, `switch`, `try`). Deeply nested control flow ("arrowhead anti-pattern") makes functions difficult to reason about, test, and maintain.
+Rooted in **Object Calisthenics**, this rule mandates that a single function body should not exceed 2 levels of indentation (Level 0: function declaration, Level 1: function body, Level 2: first-level control flow block, Level 3+: nested control flow violation). Deeply nested control flow ("arrowhead anti-pattern") makes functions difficult to reason about, test, and maintain.
 
 ##### ❌ Bad
 ```dart
 void processOrders(List<Order> orders) {
   for (final order in orders) {
-    if (order.isValid) { // ⚠️ 2nd level of indentation!
+    if (order.isValid) { // ⚠️ Level 3 (nested control flow inside for-loop)!
       ship(order);
     }
   }

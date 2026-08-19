@@ -10,7 +10,7 @@ This directory provides a practical example demonstrating how to configure and u
 
 ```yaml
 dev_dependencies:
-  code_craft_lints: ^1.0.0
+  code_craft_lints: ^1.1.0
 ```
 
 ### 2. Configure `analysis_options.yaml`
@@ -51,7 +51,7 @@ The code in [`main.dart`](main.dart) illustrates clean code patterns compliant w
 | **`pure_contract_class`** | `abstract interface class UserRepository` defines an abstract contract without state or method bodies. | ✅ (`Add 'interface' modifier`) |
 | **`final_implementation_class`** | `final class InMemoryUserRepository` and `final class NotificationService` prevent unintended subclassing. | ✅ (`Add 'final' modifier`) |
 | **`prefer_ternary`** | `formatAccountStatus` uses concise ternary expressions instead of verbose `if-else` blocks. | ✅ (`Convert to ternary operator`) |
-| **`one_level_of_indentation`** | `notifyUsers` extracts loop logic into `_notifySingleUser` to maintain at most 1 level of indentation. | ❌ (Manual refactor) |
+| **`max_two_level_of_indentation`** | `notifyUsers` extracts loop logic into `_notifySingleUser` to maintain at most 2 levels of indentation. | ❌ (Manual refactor) |
 | **`one_statement_per_block`** | Conditionals and loops contain at most one statement per block. | ❌ (Manual refactor) |
 
 ---

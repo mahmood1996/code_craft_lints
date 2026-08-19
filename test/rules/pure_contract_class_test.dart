@@ -9,7 +9,7 @@ void main() {
 }
 
 @reflectiveTest
-class PureContractClassTest extends AnalysisRuleTest {
+final class PureContractClassTest extends AnalysisRuleTest {
   @override
   void setUp() {
     rule = PureContractClassLint();
