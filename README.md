@@ -16,6 +16,7 @@ Built directly on the modern official `analysis_server_plugin` framework, `code_
 - [Features](#features)
 - [Installation](#installation)
 - [Configuration](#configuration)
+  - [Configurable Diagnostics](#configurable-diagnostics)
 - [Automatic Fixing](#automatic-fixing)
 - [Rules & Fixes Catalog](#rules--fixes-catalog)
   - [prefer_ternary](#prefer_ternary)
@@ -44,7 +45,7 @@ Add `code_craft_lints` to your `pubspec.yaml` under `dev_dependencies`:
 
 ```yaml
 dev_dependencies:
-  code_craft_lints: ^1.1.0
+  code_craft_lints: ^1.1.1
 ```
 
 Then install the dependencies:
@@ -59,14 +60,33 @@ flutter pub get
 
 ## Configuration
 
-Enable the plugin in your project's `analysis_options.yaml`:
+Enable and configure `code_craft_lints` in your project's `analysis_options.yaml`:
 
 ```yaml
 plugins:
-  code_craft_lints:
+  code_craft_lints: ^1.1.1
+    # Configure separate rules individually
+    diagnostics:
+      prefer_ternary: true
+      pure_contract_class: true
+      final_implementation_class: true
+      max_two_level_of_indentation: true
+      one_statement_per_block: true
 ```
 
-Once enabled, restart your IDE's Dart Analysis Server or run:
+### Configurable Diagnostics
+
+All rules are enabled by default (`true`). You can customize and toggle individual rules depending on your team's architectural preferences:
+
+| Rule Name | Default | Description |
+| :--- | :---: | :--- |
+| `prefer_ternary` | `true` | Prefer ternary operators for simple returns and assignments. |
+| `pure_contract_class` | `true` | Enforce `abstract interface class` for contract classes. |
+| `final_implementation_class` | `true` | Enforce `final class` or `base class` on concrete implementation classes. |
+| `max_two_level_of_indentation` | `true` | Enforce a maximum of 2 levels of indentation per function. |
+| `one_statement_per_block` | `true` | Ensure control blocks contain at most one statement. |
+
+Once configured, restart your IDE's Dart Analysis Server or run:
 
 ```bash
 dart analyze
@@ -297,7 +317,17 @@ void _onSuccess(Response response) {
 
 ## Disabling Rules
 
-### Ignore a rule for a specific line
+### 1. Project-wide via `analysis_options.yaml`
+Disable specific rules across the entire project by setting their diagnostic toggle to `false`:
+
+```yaml
+plugins:
+  code_craft_lints: ^1.1.1
+    diagnostics:
+      prefer_ternary: false # Disables prefer_ternary across the project
+```
+
+### 2. Ignore a rule for a specific line
 Add an `// ignore:` comment above the line:
 
 ```dart
@@ -309,7 +339,7 @@ if (isReady) {
 }
 ```
 
-### Ignore a rule for an entire file
+### 3. Ignore a rule for an entire file
 Add an `// ignore_for_file:` comment at the very top of the file:
 
 ```dart

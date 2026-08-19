@@ -10,18 +10,25 @@ This directory provides a practical example demonstrating how to configure and u
 
 ```yaml
 dev_dependencies:
-  code_craft_lints: ^1.1.0
+  code_craft_lints: ^1.1.1
 ```
 
 ### 2. Configure `analysis_options.yaml`
 
-Enable the plugin under the `plugins` section:
+Enable and configure the plugin under the `plugins` section:
 
 ```yaml
 include: package:lints/recommended.yaml
 
 plugins:
-  code_craft_lints:
+  code_craft_lints: ^1.1.1
+    # Configure separate rules individually
+    diagnostics:
+      prefer_ternary: true
+      pure_contract_class: true
+      final_implementation_class: true
+      max_two_level_of_indentation: true
+      one_statement_per_block: true
 ```
 
 ### 3. Run Analysis
